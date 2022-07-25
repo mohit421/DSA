@@ -21,3 +21,31 @@ public:
         return max_glob;
     }
 };
+
+
+
+
+// Brute force solution
+
+/*
+
+class Solution {
+public:
+    int maxSubArray(vector<int>& nums) {
+        if(nums.size()==1)
+            return nums[0];
+        int max_curr,max_glob;
+        max_curr = max_glob =  nums[0];
+        for(int i=1;i<nums.size();i++){
+            max_curr = 0;
+            for(int j=i;j<nums.size();j++){
+                max_curr += nums[j];
+                max_glob = max(max_curr,max_glob);
+            }
+        }
+        return max_glob;
+    }
+};
+
+
+*/
