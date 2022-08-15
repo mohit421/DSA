@@ -31,7 +31,26 @@ pair<int, int> findFirstLastPosition(vector<int> &arr, int n, int x)
 */
 
 
-// Optimized Code 
+
+// Optimized code 1 ---> TC:- O(lognN)
+
+
+/*
+
+#include<bits/stdc++.h>
+pair<int, int> findFirstLastPosition(vector<int> &arr, int n, int x)
+{
+   bool yes = find(arr.begin(),arr.end(),x) != arr.end();
+   if(!yes) return {-1,-1};
+int up = upper_bound(arr.begin(),arr.end(), x) - arr.begin();
+   int low = lower_bound(arr.begin(),arr.end(), x) - arr.begin();
+   return {low,up - 1};
+}
+
+*/
+
+
+// Optimized Code 2
 
 
 // Time complexity:- O(logN ) + O(logN) = O(logN)
