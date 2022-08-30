@@ -132,3 +132,61 @@ int main() {
 
 
 */
+
+
+
+// ----------------------------------------------------------------------------------------
+
+/*
+
+TC: O(N)
+SC: O(N)
+*/
+
+/*
+
+#include <iostream>
+#include <cstring>
+#include<algorithm>
+#define NO_OF_CHARS 256
+using namespace std;
+
+bool isPermutation(char input1[], char input2[]) {
+    // Write your code here
+    int count[NO_OF_CHARS] = {0};
+    int i;
+ 
+    // For each character in input strings,
+    // increment count in the corresponding
+    // count array
+    for (i = 0; input1[i] && input2[i];  i++)
+    {
+        count[input1[i]]++;
+        count[input2[i]]--;
+    }
+ 
+    // If both strings are of different length.
+    // Removing this condition  will make the
+    // program fail for strings like "aaca" and
+    // "aca"
+    if (input1[i] || input2[i])
+      return false;
+ 
+    // See if there is any non-zero value in
+    // count array
+    for (i = 0; i < NO_OF_CHARS; i++)
+        if (count[i])
+            return false;
+     return true;
+}
+
+int main() {
+    int size = 1e6;
+    char str1[size];
+    char str2[size];
+    cin >> str1 >> str2;
+    cout << (isPermutation(str1, str2) ? "true" : "false");
+}
+
+
+*/
